@@ -1,5 +1,5 @@
 # cat_api
-git init
+git initgit commit -m "first commit"
 A new Flutter project.
 
 ## Getting Started

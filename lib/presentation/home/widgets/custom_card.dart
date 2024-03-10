@@ -1,10 +1,10 @@
-import 'package:cat_api/models/cats_model.dart';
+import 'package:cat_api/domain/entities/cat/cat_entity.dart';
 import 'package:cat_api/presentation/home/widgets/cat_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCard extends StatelessWidget {
-  final CatsModel cat;
+  final CatEntity cat;
   const CustomCard({super.key, required this.cat});
 
   @override
@@ -36,6 +36,7 @@ class CustomCard extends StatelessWidget {
             SizedBox(
               height: 7.h,
             ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

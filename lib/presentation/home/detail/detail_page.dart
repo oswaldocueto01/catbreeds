@@ -1,13 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cat_api/models/cats_model.dart';
+import 'package:cat_api/domain/entities/cat/cat_entity.dart';
 import 'package:cat_api/presentation/home/widgets/cat_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shimmer/shimmer.dart';
 
 class DetailPage extends StatelessWidget {
-  final CatsModel cat;
+  final CatEntity cat;
 
   const DetailPage({super.key, required this.cat});
 

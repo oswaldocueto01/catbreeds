@@ -1,4 +1,5 @@
-import 'package:cat_api/models/cats_model.dart';
+
+import 'package:cat_api/domain/entities/cat/cat_entity.dart';
 import 'package:cat_api/presentation/home/detail/detail_page.dart';
 import 'package:cat_api/presentation/home/home_page.dart';
 import 'package:cat_api/presentation/splash/splash_page.dart';
@@ -41,7 +42,7 @@ class CatRouter {
                     path: "detail_page",
                     name: "detail_page",
                     builder: (context, state) {
-                      final cat = state.extra as CatsModel;
+                      final cat = state.extra as CatEntity;
                       return DetailPage(
                         cat: cat,
                         key: state.pageKey,

@@ -1,5 +1,6 @@
-import 'package:cat_api/models/cats_model.dart';
-import 'package:cat_api/presentation/home/logic/repository/cats_repository.dart';
+import 'package:cat_api/core/utils/logger.dart';
+import 'package:cat_api/domain/entities/cat/cat_entity.dart';
+import 'package:cat_api/inject.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -16,10 +17,12 @@ class CatProvider extends StateNotifier<CatState> {
   Future<void> getCats({String? name}) async {
     try {
       state = state.copyWith(pageState: const AsyncValue.loading());
-      final result = await CatsRepository.getCats(name: name);
-      state = state
-          .copyWith(cats: result, pageState: const AsyncValue.data(null));
+      final result = await ref.read(catUseCaseProvider).getCats(name: name);
+
+      state =
+          state.copyWith(cats: result, pageState: const AsyncValue.data(null));
     } catch (e) {
+      logger.e(e);
       state =
           state.copyWith(pageState: AsyncValue.error(e, StackTrace.current));
     }
@@ -30,6 +33,6 @@ class CatProvider extends StateNotifier<CatState> {
 class CatState with _$CatState {
   const factory CatState({
     @Default(AsyncData<void>(null)) AsyncValue<void> pageState,
-    @Default([]) List<CatsModel> cats,
+    @Default([]) List<CatEntity> cats,
   }) = _CatState;
 }

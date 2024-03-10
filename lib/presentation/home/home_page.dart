@@ -1,9 +1,8 @@
 import 'package:cat_api/core/routes/routes.dart';
 import 'package:cat_api/core/utils/debouncer.dart';
-import 'package:cat_api/presentation/home/detail/detail_page.dart';
-import 'package:cat_api/presentation/home/logic/provider/cats_home_provider.dart';
 import 'package:cat_api/presentation/home/widgets/custom_card.dart';
 import 'package:cat_api/presentation/home/widgets/shimmer_list.dart';
+import 'package:cat_api/presentation/logic/provider/cat/cats_home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$CatState {
   AsyncValue<void> get pageState => throw _privateConstructorUsedError;
-  List<CatsModel> get cats => throw _privateConstructorUsedError;
+  List<CatEntity> get cats => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CatStateCopyWith<CatState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $CatStateCopyWith<$Res> {
   factory $CatStateCopyWith(CatState value, $Res Function(CatState) then) =
       _$CatStateCopyWithImpl<$Res, CatState>;
   @useResult
-  $Res call({AsyncValue<void> pageState, List<CatsModel> cats});
+  $Res call({AsyncValue<void> pageState, List<CatEntity> cats});
 }
 
 /// @nodoc
@@ -56,7 +56,7 @@ class _$CatStateCopyWithImpl<$Res, $Val extends CatState>
       cats: null == cats
           ? _value.cats
           : cats // ignore: cast_nullable_to_non_nullable
-              as List<CatsModel>,
+              as List<CatEntity>,
     ) as $Val);
   }
 }
@@ -69,7 +69,7 @@ abstract class _$$CatStateImplCopyWith<$Res>
       __$$CatStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AsyncValue<void> pageState, List<CatsModel> cats});
+  $Res call({AsyncValue<void> pageState, List<CatEntity> cats});
 }
 
 /// @nodoc
@@ -94,7 +94,7 @@ class __$$CatStateImplCopyWithImpl<$Res>
       cats: null == cats
           ? _value._cats
           : cats // ignore: cast_nullable_to_non_nullable
-              as List<CatsModel>,
+              as List<CatEntity>,
     ));
   }
 }
@@ -104,16 +104,16 @@ class __$$CatStateImplCopyWithImpl<$Res>
 class _$CatStateImpl implements _CatState {
   const _$CatStateImpl(
       {this.pageState = const AsyncData<void>(null),
-      final List<CatsModel> cats = const []})
+      final List<CatEntity> cats = const []})
       : _cats = cats;
 
   @override
   @JsonKey()
   final AsyncValue<void> pageState;
-  final List<CatsModel> _cats;
+  final List<CatEntity> _cats;
   @override
   @JsonKey()
-  List<CatsModel> get cats {
+  List<CatEntity> get cats {
     if (_cats is EqualUnmodifiableListView) return _cats;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_cats);
@@ -148,12 +148,12 @@ class _$CatStateImpl implements _CatState {
 abstract class _CatState implements CatState {
   const factory _CatState(
       {final AsyncValue<void> pageState,
-      final List<CatsModel> cats}) = _$CatStateImpl;
+      final List<CatEntity> cats}) = _$CatStateImpl;
 
   @override
   AsyncValue<void> get pageState;
   @override
-  List<CatsModel> get cats;
+  List<CatEntity> get cats;
   @override
   @JsonKey(ignore: true)
   _$$CatStateImplCopyWith<_$CatStateImpl> get copyWith =>
