@@ -1,5 +1,9 @@
 import 'package:cat_api/domain/entities/cat/weight_entity.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'weight_model.g.dart';
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class WeightModel {
   String imperial;
   String metric;
@@ -12,13 +16,8 @@ class WeightModel {
     return WeightEntity(imperial: imperial, metric: metric);
   }
 
-  factory WeightModel.fromJson(Map<String, dynamic> json) => WeightModel(
-        imperial: json["imperial"],
-        metric: json["metric"],
-      );
+  factory WeightModel.fromJson(Map<String, dynamic> json) =>
+      _$WeightModelFromJson(json);
 
-  Map<String, dynamic> toJson() => {
-        "imperial": imperial,
-        "metric": metric,
-      };
+  Map<String, dynamic> toJson() => _$WeightModelToJson(this);
 }

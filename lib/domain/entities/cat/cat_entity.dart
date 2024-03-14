@@ -82,5 +82,6 @@ class CatEntity {
     this.referenceImageId,
     this.catFriendly,
     this.bidability,
+
   });
 }
