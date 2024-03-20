@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cat_api/domain/entities/cat/cat_entity.dart';
+import 'package:cat_api/presentation/home/widgets/aspect_ratio_image.dart';
 import 'package:cat_api/presentation/home/widgets/cat_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,9 @@ class DetailPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(
-                width: 1.sw,
-                height: 0.5.sh,
-                child: CatImage(
-                  referenceImageId: cat.referenceImageId,
-                )),
+            AspectRatioWidget(
+              referenceImageId: cat.referenceImageId,
+            ),
             Expanded(
                 child: ListView(
               children: [
@@ -49,43 +47,7 @@ class DetailPage extends StatelessWidget {
                         'Intelligence level Level: ${cat.intelligence.toString()}',
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        'Adaptability level: ${cat.adaptability.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Energy level: ${cat.energyLevel.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      if (cat.catFriendly != null)
-                        Text(
-                          'Friendship level:${cat.catFriendly.toString()}',
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      Text(
-                        'Social need: ${cat.socialNeeds.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Friendly child: ${cat.childFriendly.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Grooming level: ${cat.grooming.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Dog friendly level: ${cat.dogFriendly.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Cat friendly lvl: ${cat.catFriendly.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Shedding level: ${cat.sheddingLevel.toString()}',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
+
                     ],
                   ),
                 )

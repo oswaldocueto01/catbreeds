@@ -8,7 +8,7 @@ class NetworkService {
   // static final String url = dotenv.env['BASE_URL'].toString();
   // static final String header = dotenv.get('API_KEY_HEADER');
 
-  static Future<dynamic> get({
+  Future<dynamic> get({
     required String path,
   }) async {
     try {

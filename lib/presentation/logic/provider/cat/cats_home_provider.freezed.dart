@@ -16,6 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CatState {
+  /// Utilizamos [pageState] para conocer el estado de la página durante la ejecución del método.
+  ///
+  /// Puede tener valores como "cargando", "error" o "null" para indicar que no está cargando.
   AsyncValue<void> get pageState => throw _privateConstructorUsedError;
   List<CatEntity> get cats => throw _privateConstructorUsedError;
 
@@ -107,6 +110,9 @@ class _$CatStateImpl implements _CatState {
       final List<CatEntity> cats = const []})
       : _cats = cats;
 
+  /// Utilizamos [pageState] para conocer el estado de la página durante la ejecución del método.
+  ///
+  /// Puede tener valores como "cargando", "error" o "null" para indicar que no está cargando.
   @override
   @JsonKey()
   final AsyncValue<void> pageState;
@@ -151,6 +157,10 @@ abstract class _CatState implements CatState {
       final List<CatEntity> cats}) = _$CatStateImpl;
 
   @override
+
+  /// Utilizamos [pageState] para conocer el estado de la página durante la ejecución del método.
+  ///
+  /// Puede tener valores como "cargando", "error" o "null" para indicar que no está cargando.
   AsyncValue<void> get pageState;
   @override
   List<CatEntity> get cats;
